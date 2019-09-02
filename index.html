@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Random Image Gallery</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .tile {
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        transition: all 3s ease;
+      }
+      .container .tile:nth-child(even) img.animate {
+        animation: scalePos 3s;
+      }
+      .container .tile:nth-child(odd) img.animate {
+        animation: scaleNeg 3s;
+      }
+      .logo {
+        position: absolute;
+        opacity: 0.1;
+        transform: translate(-50%, -50%);
+      }
+      .logo.center {
+        top: 50%;
+        left: 50%;
+      }
+      .logo.top-left {
+        top: calc(100vh / 3);
+        left: calc(100vw / 5);
+      }
+      .logo.top-right {
+        top: calc(100vh / 3);
+        left: calc(100vw / 5 * 4);
+      }
+      .logo.bottom-left {
+        top: calc(100vh / 3 * 2);
+        left: calc(100vw / 5);
+      }
+      .logo.bottom-right {
+        top: calc(100vh / 3 * 2);
+        left: calc(100vw / 5 * 4);
+      }
+      .logo > svg {
+        animation: infiniteRotate 100s infinite;
+      }
+      @keyframes infiniteRotate {
+        0% {
+          transform: rotateZ(0);
+        }
+        100% {
+          transform: rotateZ(360deg);
+        }
+      }
+      @keyframes scaleNeg {
+        0% {
+          opacity: 0;
+          transform: scale(0.5) rotateZ(-15deg);
+        }
+
+        40% {
+          opacity: 0.9;
+          transform: scale(1.02);
+        }
+        60% {
+          opacity: 0.75;
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes scalePos {
+        0% {
+          opacity: 0;
+          transform: scale(0.5) rotateZ(15deg);
+        }
+
+        40% {
+          opacity: 0.9;
+          transform: scale(1.02);
+        }
+        60% {
+          opacity: 0.75;
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes translateMe {
+        0% {
+          opacity: 0.2;
+          transform: translate(100%, 0);
+        }
+        20% {
+          opacity: 0.9;
+        }
+        60% {
+          opacity: 0.75;
+          transform: translate(-0.8%, 0);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(0, 0), scale(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+      <div class="tile">
+        <img class="animate" src="" alt="" height="200" width="200" />
+      </div>
+    </div>
+    <div class="logo">
+      <svg width="445" height="380" xmlns="http://www.w3.org/2000/svg">
+        <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+        <g>
+          <path
+            stroke="#29abe2"
+            id="edt-hex"
+            d="m2.173739,190.291968l94.5205,-189.04093l252.05466,0l94.52047,189.04093l-94.52047,189.04093l-252.05466,0l-47.26025,-94.52047l-47.26025,-94.52046z"
+            opacity="0.5"
+            fill-opacity="null"
+            stroke-opacity="null"
+            stroke-width="3"
+            fill="transparent"
+          />
+          <line
+            stroke-linecap="null"
+            stroke-linejoin="null"
+            id="svg_4"
+            y2="1.719709"
+            x2="348.184257"
+            y1="189.744144"
+            x1="1.370892"
+            fill-opacity="null"
+            stroke-opacity="null"
+            stroke-width="2"
+            stroke="#29abe2"
+            fill="none"
+          />
+          <line
+            stroke="#29abe2"
+            stroke-linecap="null"
+            stroke-linejoin="null"
+            id="svg_7"
+            y2="380.635467"
+            x2="346.46189"
+            y1="188.598024"
+            x1="2.519885"
+            fill-opacity="null"
+            stroke-opacity="null"
+            stroke-width="2"
+            fill="none"
+          />
+          <line
+            stroke-linecap="null"
+            stroke-linejoin="null"
+            id="svg_8"
+            y2="377.061422"
+            x2="347.897848"
+            y1="-0.134582"
+            x1="349.04434"
+            fill-opacity="null"
+            stroke-opacity="null"
+            stroke-width="2"
+            stroke="#29abe2"
+            fill="none"
+          />
+          <line
+            stroke-linecap="null"
+            stroke-linejoin="null"
+            id="svg_9"
+            y2="379.354407"
+            x2="347.897848"
+            y1="2.158403"
+            x1="96.816009"
+            fill-opacity="null"
+            stroke-opacity="null"
+            stroke-width="2"
+            stroke="#29abe2"
+            fill="none"
+          />
+          <line
+            stroke-linecap="null"
+            stroke-linejoin="null"
+            id="svg_11"
+            y2="378.207914"
+            x2="100.255486"
+            y1="1.01191"
+            x1="347.897848"
+            fill-opacity="null"
+            stroke-opacity="null"
+            stroke-width="2"
+            stroke="#29abe2"
+            fill="none"
+          />
+          <line
+            stroke="#29abe2"
+            stroke-linecap="null"
+            stroke-linejoin="null"
+            id="svg_13"
+            y2="191.329651"
+            x2="443.056718"
+            y1="190.183159"
+            x1="3.950107"
+            fill-opacity="null"
+            stroke-opacity="null"
+            stroke-width="2"
+            fill="none"
+          />
+        </g>
+      </svg>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
